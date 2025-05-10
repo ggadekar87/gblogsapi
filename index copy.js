@@ -1,23 +1,18 @@
- const express = require('express');
+const express = require('express');
 const app = express();
 const mysql = require('mysql2');
-app.use(express.json());
-app.use(express.urlencoded());
-// const db = mysql.createConnection({
-//   localAddress: "162.254.39.113",
-//   host: '127.0.0.1', // e.g. 'localhost' or an external IP/domain
-//   user: 'gtecpxcn_ggadekar87', // Your MySQL username
-//   password: 'G@nesh1987!', // Your MySQL password
-//   database: 'gtecpxcn_notebook', // Your MySQL database name
-//   port: 3306, // Default MySQL port
-// });
- const db = mysql.createConnection({
-    host: "127.0.0.1",
-    port: 3306,
-    user: "root",
-    password: "G@nesh1987!",
-    database: "gtecpxcn_notebook"
+const bodyParser = require("body-parser");
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded())
+const db = mysql.createConnection({
+  localAddress: "162.254.39.113",
+  host: '127.0.0.1', // e.g. 'localhost' or an external IP/domain
+  user: 'gtecpxcn_ggadekar87', // Your MySQL username
+  password: 'G@nesh1987!', // Your MySQL password
+  database: 'gtecpxcn_notebook', // Your MySQL database name
+  port: 3306, // Default MySQL port
 });
+
 db.connect((err) => {
   if (err) {
     console.error("Database connection failed:", err);
@@ -73,5 +68,3 @@ const port = process.env.PORT || 3000; // Use the port provided by the host or d
 app.listen(port, () => {
   console.log(`Server listening on port ${port}`);
 });
-
- 

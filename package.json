@@ -9,7 +9,13 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "body-parser": "^2.2.0",
     "express": "^4.21.2",
-    "mysql": "^2.18.1"
+    "jade": "^1.11.0",
+    "mysql": "^2.18.1",
+    "mysql2": "^3.12.0",
+    "node-ssh": "^13.2.0",
+    "ssh2": "^1.16.0",
+    "tunnel-ssh": "^5.2.0"
   }
 }
